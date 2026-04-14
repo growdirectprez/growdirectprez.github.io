@@ -264,10 +264,40 @@ a.service-card {
   color: var(--card-accent, var(--accent));
 }
 
+/* --- Section white background --- */
+.section--white {
+  background: var(--card-bg);
+}
+
+/* --- Hero visual --- */
+.hero__visual {
+  margin: 2.5rem auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Service card icon --- */
+.service-card__icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
 /* --- Capabilities Strip --- */
 .capabilities {
   padding: 3rem 1.5rem;
   text-align: center;
+  position: relative;
+}
+
+.capabilities::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(to right, var(--canary-gold), var(--angel-teal), var(--cove-blue));
+  margin-bottom: 3rem;
+  border-radius: 2px;
 }
 
 .capabilities__tags {
@@ -294,13 +324,44 @@ a.service-card {
   padding: var(--section-pad);
   max-width: var(--container-max);
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: start;
 }
 
-.about h2 {
+.about__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 140px;
+}
+
+.about__number {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.about__label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.5rem;
+  max-width: 120px;
+}
+
+.about__text h2 {
   margin-bottom: 1.5rem;
 }
 
-.about p {
+.about__text p {
   color: var(--text-secondary);
   max-width: 680px;
 }
@@ -347,6 +408,21 @@ a.service-card {
 .pillar-hero {
   padding: 5rem 1.5rem 3rem;
   border-bottom: 3px solid var(--pillar-accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar-hero::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: var(--pillar-accent);
+  opacity: 0.08;
+  pointer-events: none;
 }
 
 .pillar-hero h1 {
@@ -592,6 +668,34 @@ a.service-card {
 
   .capability-list {
     grid-template-columns: 1fr;
+  }
+
+  /* About — stack on mobile */
+  .about {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about__stat {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .about__number {
+    font-size: 3.5rem;
+  }
+
+  .about__label {
+    max-width: none;
+    margin-top: 0;
+  }
+
+  /* Hero visual — smaller on mobile */
+  .hero__visual svg {
+    width: 100%;
+    height: auto;
   }
 }
 
