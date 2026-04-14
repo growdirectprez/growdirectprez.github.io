@@ -50,6 +50,7 @@ body.pillar-membership { --pillar-accent: var(--cove-blue); }
 /* --- Base --- */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -274,6 +275,13 @@ a.service-card {
   margin: 2.5rem auto 0;
   display: flex;
   justify-content: center;
+  max-width: 480px;
+  padding: 0 1.5rem;
+}
+
+.hero__visual svg {
+  width: 100%;
+  height: auto;
 }
 
 /* --- Service card icon --- */
