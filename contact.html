@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — GrowDirect</title>
+  <meta name="robots" content="noindex">
+
+  <!-- OG (for link previews when shared directly) -->
+  <meta property="og:title" content="Contact — GrowDirect">
+  <meta property="og:description" content="Get in touch about your next platform project.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://growdirect.io/contact.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact — GrowDirect">
+  <meta name="twitter:description" content="Get in touch about your next platform project.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELPTR2ZLP3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELPTR2ZLP3');
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="site-nav__wordmark">GrowDirect</a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="site-nav__links">
+        <li><a href="/pos-platform.html">POS Platform</a></li>
+        <li><a href="/re-toolkit.html">RE Toolkit</a></li>
+        <li><a href="/membership.html">Membership</a></li>
+        <li><a href="/contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="contact-page">
+      <h1 id="contact-headline">Get in touch</h1>
+      <p id="contact-subhead">Have something to build? Tell me about it.</p>
+
+      <form id="contact-form" class="contact-form" action="https://formspree.io/f/xbdqlakw" method="POST">
+        <input type="hidden" id="source" name="_source" value="direct">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="message">What are you working on?</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+
+      <div class="contact-form__success">
+        Thanks for reaching out. I'll be in touch soon.
+      </div>
+
+      <div class="contact-direct">
+        <p>Prefer email? <a href="mailto:gclyle@growdirect.io">gclyle@growdirect.io</a></p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 GrowDirect. <a href="mailto:gclyle@growdirect.io">gclyle@growdirect.io</a></p>
+      <p>This site uses Google Analytics to measure traffic. No advertising. No remarketing.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
