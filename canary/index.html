@@ -1181,7 +1181,7 @@ nav {
   </table>
 
   <div style="text-align:center;margin-top:48px;">
-    <a href="/contact.html?from=canary-tech" style="display:inline-block;padding:12px 28px;border:1px solid #FBBF24;border-radius:8px;color:#FBBF24;font-weight:600;font-size:14px;text-decoration:none;">Want the technical details? Let's talk</a>
+    <a href="#pricing" style="display:inline-block;padding:12px 28px;border:1px solid #FBBF24;border-radius:8px;color:#FBBF24;font-weight:600;font-size:14px;text-decoration:none;">Want the technical details? Let's talk</a>
   </div>
 </div>
 
@@ -1195,8 +1195,7 @@ nav {
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:900px;margin:0 auto;align-items:start;">
 
-    <div>
-      <div class="price-card" style="border-color:rgba(251,191,36,0.4);margin-bottom:20px;">
+      <div class="price-card" style="border-color:rgba(251,191,36,0.4);">
         <div class="price-tier">What Early Partners Get</div>
         <ul class="price-features" style="margin-top:16px;">
           <li>Full platform access — all 37 detection rules</li>
@@ -1214,47 +1213,13 @@ nav {
           <li>Any industry — retail, food, services</li>
         </ul>
       </div>
-    </div>
-
-    <div class="price-card" style="border-color:rgba(251,191,36,0.3);">
-      <div class="price-tier" style="margin-bottom:20px;">Join the Flock</div>
-      <form id="pricing-form" action="https://formspree.io/f/xbdqlakw" method="POST">
-        <input type="hidden" name="_source" value="canary-early-access">
-        <div style="margin-bottom:14px;">
-          <input type="text" name="name" placeholder="Name" required style="width:100%;padding:10px 14px;background:#0D1117;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#F8F7F4;font-family:inherit;font-size:0.9rem;">
-        </div>
-        <div style="margin-bottom:14px;">
-          <input type="email" name="email" placeholder="Email" required style="width:100%;padding:10px 14px;background:#0D1117;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#F8F7F4;font-family:inherit;font-size:0.9rem;">
-        </div>
-        <div style="margin-bottom:14px;">
-          <input type="text" name="business" placeholder="Business name (optional)" style="width:100%;padding:10px 14px;background:#0D1117;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#F8F7F4;font-family:inherit;font-size:0.9rem;">
-        </div>
-        <button type="submit" style="width:100%;padding:12px;background:#FBBF24;color:#0D1117;border:none;border-radius:6px;font-weight:700;font-size:0.95rem;cursor:pointer;letter-spacing:0.5px;">Request Early Access</button>
-      </form>
-      <div id="pricing-thanks" style="display:none;text-align:center;padding:20px 0;color:#FBBF24;font-weight:600;">Thanks — we'll be in touch shortly.</div>
-      <div style="text-align:center;margin-top:12px;font-size:0.8rem;color:rgba(248,247,244,0.5);">No credit card. No commitment. Just a conversation.</div>
-    </div>
 
   </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="https://formspree.io/f/xbdqlakw" target="_blank" style="display:inline-block;padding:14px 48px;background:#FBBF24;color:#0D1117;border:none;border-radius:6px;font-weight:700;font-size:1rem;cursor:pointer;letter-spacing:0.5px;text-decoration:none;">Request Early Access</a>
+    <div style="margin-top:12px;font-size:0.8rem;color:rgba(248,247,244,0.5);">No credit card. No commitment. Just a conversation.</div>
+  </div>
 </div>
-
-<script>
-(function() {
-  const form = document.getElementById('pricing-form');
-  if (!form) return;
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    try {
-      const res = await fetch(form.action, { method:'POST', body: new FormData(form), headers:{'Accept':'application/json'} });
-      if (res.ok) {
-        form.style.display = 'none';
-        document.getElementById('pricing-thanks').style.display = 'block';
-        if (typeof gtag === 'function') gtag('event', 'pricing_form_submit', { source: 'canary-pricing' });
-      }
-    } catch(err) {}
-  });
-})();
-</script>
 
 
 <!-- FOOTER -->
@@ -1262,7 +1227,7 @@ nav {
   <div class="footer-left">&copy; 2026 GrowDirect DAO LLC · Canary Loss Prevention Platform</div>
   <div class="footer-right">
     <a href="../">GrowDirect</a>
-    <a href="/contact.html?from=canary">Contact</a>
+    <a href="#pricing">Contact</a>
   </div>
 </div>
 
