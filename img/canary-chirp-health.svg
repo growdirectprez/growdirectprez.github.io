@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="140" viewBox="0 0 130 100" fill="none">
+<style>
+  @keyframes health-wave-1 {
+    0%, 100% { opacity:0; stroke:#059669; transform:translateX(0) scale(0.8); }
+    10% { opacity:0.95; stroke:#059669; transform:translateX(1px) scale(1); }
+    35% { opacity:0.7; stroke:#FBBF24; transform:translateX(4px) scale(1.05); }
+    60% { opacity:0.5; stroke:#EF4444; transform:translateX(7px) scale(1.1); }
+    85% { opacity:0; stroke:#EF4444; transform:translateX(10px) scale(1.15); }
+  }
+  @keyframes health-wave-2 {
+    0%, 100% { opacity:0; stroke:#059669; transform:translateX(0) scale(0.7); }
+    15% { opacity:0.7; stroke:#059669; transform:translateX(2px) scale(0.9); }
+    40% { opacity:0.5; stroke:#FBBF24; transform:translateX(5px) scale(1); }
+    65% { opacity:0.3; stroke:#EF4444; transform:translateX(9px) scale(1.05); }
+    90% { opacity:0; stroke:#EF4444; transform:translateX(12px) scale(1.1); }
+  }
+  @keyframes health-wave-3 {
+    0%, 100% { opacity:0; stroke:#059669; transform:translateX(0) scale(0.6); }
+    20% { opacity:0.5; stroke:#059669; transform:translateX(3px) scale(0.8); }
+    45% { opacity:0.35; stroke:#FBBF24; transform:translateX(6px) scale(0.9); }
+    70% { opacity:0.2; stroke:#EF4444; transform:translateX(10px) scale(0.95); }
+    95% { opacity:0; stroke:#EF4444; transform:translateX(14px) scale(1); }
+  }
+  @keyframes health-dot {
+    0%, 5% { fill:#059669; r:4; opacity:0.8; }
+    33% { fill:#059669; r:5; opacity:1; }
+    50% { fill:#FBBF24; r:6; opacity:1; }
+    66% { fill:#EF4444; r:7; opacity:1; }
+    80% { fill:#EF4444; r:5; opacity:0.6; }
+    100% { fill:#059669; r:4; opacity:0; }
+  }
+  @keyframes health-ring {
+    0%, 100% { stroke:#059669; r:8; opacity:0; stroke-width:2; }
+    20% { stroke:#059669; r:8; opacity:0.4; stroke-width:2; }
+    50% { stroke:#FBBF24; r:12; opacity:0.3; stroke-width:1; }
+    80% { stroke:#EF4444; r:17; opacity:0; stroke-width:0.5; }
+  }
+  @keyframes beak-open {
+    0%, 70%, 100% { transform:rotate(0deg); }
+    10%, 30%, 50% { transform:rotate(-5deg); }
+    20%, 40%, 60% { transform:rotate(0deg); }
+  }
+  @keyframes beak-close {
+    0%, 70%, 100% { transform:rotate(0deg); }
+    10%, 30%, 50% { transform:rotate(4deg); }
+    20%, 40%, 60% { transform:rotate(0deg); }
+  }
+</style>
+<g>
+  <!-- Body -->
+  <circle cx="42" cy="33" r="18" fill="#FBBF24"/>
+  <ellipse cx="50" cy="58" rx="25" ry="19" fill="#FBBF24"/>
+  <!-- Wing -->
+  <path d="M36 47 Q16 56 26 74 Q38 66 48 54 Z" fill="#F59E0B"/>
+  <!-- Eye -->
+  <circle cx="48" cy="30" r="4" fill="#0d1117"/>
+  <circle cx="46.5" cy="28.8" r="1.5" fill="#FBBF24"/>
+  <!-- Beak — animated open/close -->
+  <g transform-origin="58 34">
+    <path d="M58 30 L73 24 L63 34 Z" fill="#E8A317" style="animation: beak-open 2.2s ease-in-out infinite"/>
+  </g>
+  <g transform-origin="58 36">
+    <path d="M58 37 L71 40 L63 37 Z" fill="#D97706" style="animation: beak-close 2.2s ease-in-out infinite"/>
+  </g>
+  <!-- Tail -->
+  <path d="M28 66 Q12 78 18 88 Q28 80 36 72 Z" fill="#F59E0B"/>
+  <!-- HEALTH CHIRP WAVES: green → yellow → red -->
+  <path d="M73 22 Q80 18 83 26" stroke="#059669" stroke-width="3" fill="none" stroke-linecap="round" style="animation: health-wave-1 2.2s ease-out infinite"/>
+  <path d="M81 15 Q90 9 94 22" stroke="#FBBF24" stroke-width="2.5" fill="none" stroke-linecap="round" style="animation: health-wave-2 2.2s ease-out infinite 0.18s"/>
+  <path d="M89 9 Q100 2 105 17" stroke="#EF4444" stroke-width="2" fill="none" stroke-linecap="round" style="animation: health-wave-3 2.2s ease-out infinite 0.36s"/>
+  <!-- Alert dot — cycles green → yellow → red -->
+  <circle cx="96" cy="5" style="animation: health-dot 2.2s ease-in-out infinite"/>
+  <!-- Expanding ring -->
+  <circle cx="96" cy="5" fill="none" style="animation: health-ring 2.2s ease-out infinite"/>
+</g>
+</svg>
