@@ -1141,7 +1141,11 @@ nav {
 
   </div>
   <div style="text-align:center;margin-top:40px;">
-    <a href="https://formspree.io/f/xbdqlakw" target="_blank" style="display:inline-block;padding:14px 48px;background:#FBBF24;color:#0D1117;border:none;border-radius:6px;font-weight:700;font-size:1rem;cursor:pointer;letter-spacing:0.5px;text-decoration:none;">Request Early Access</a>
+    <form action="https://formspree.io/f/xbdqlakw" method="POST" style="display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;max-width:560px;">
+      <input type="email" name="email" placeholder="your@email.com" required style="padding:14px 16px;border:1px solid rgba(248,247,244,0.2);border-radius:6px;background:rgba(0,0,0,0.3);color:#F8F7F4;font-size:14px;font-family:inherit;min-width:260px;outline:none;">
+      <input type="hidden" name="_subject" value="Canary early access request">
+      <button type="submit" style="padding:14px 32px;background:#FBBF24;color:#0D1117;border:none;border-radius:6px;font-weight:700;font-size:1rem;cursor:pointer;letter-spacing:0.5px;font-family:inherit;">Request Early Access</button>
+    </form>
     <div style="margin-top:12px;font-size:0.8rem;color:rgba(248,247,244,0.5);">No credit card. No commitment. Just a conversation.</div>
   </div>
 </div>
